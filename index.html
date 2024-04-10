@@ -3,45 +3,127 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Thomas Salzgeber - Country Information</title>
+    <title>Thomas Salzgeber - World Population</title>
     <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/style.css" media="all"> -->
+    <link rel="stylesheet" href="css/style.css" media="all">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="scripts/content.js" defer></script>
     <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
+    <div id="wrapper">
+        <header id="top">
+            <!-- Site Logo -->
+            <a href="index.html">
+                <picture class="logo-image">
+                    <source srcset="images/logo/logo-128x128.png" width="128" height="128" media="(min-width: 801px)">
+                    <source srcset="images/logo/logo-64x64.png" width="64" height="64"
+                        media="(min-width: 400px) AND (max-width:800px)">
+                    <source srcset="images/logo/logo-32x32.png" width="32" height="32"
+                        media="(min-width: 0px) AND (max-width:399px)">
+                    <img src="images/logo/logo-128x128.png" alt="Logo Thomas Salzgeber" width="128" height="128">
+                </picture>
+            </a>
 
-    <header>
-        <h1>world info</h1>
-    </header>
+            <h1 id="header-title">title</h1>
 
-    <main>
+        </header>
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a class="home-image" href="../index.html"> Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a class="game-image" href="#"> Games</a>
+                        <div class="dropdown-content">
+                            <a href="../hangman/index.html">Hangman</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="quiz-image" href="#"> Quizzes</a>
+                        <div class="dropdown-content">
+                            <a href="../mathquiz/index.html">Math Quiz</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="other-image" href="#"> Other</a>
+                        <div class="dropdown-content">
+                            <a href="index.html">World Popul.</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
 
-        <noscript>
-            <strong>Please enable JavaScript to get the full web content. Some elements are not visible if
-                JavaScript is disabled.</strong>
-            <p id="nocscript-link">Visit <a href="https://www.enable-javascript.com/" target="_blank">Enable
-                    Javascript</a>
-                for instructions for your web browser.</p>
-        </noscript>
+        <main class="link-content">
 
-        <h2>Info</h2>
+            <noscript>
+                <strong>Please enable JavaScript to get the full web content. Some elements are not visible if
+                    JavaScript is disabled.</strong>
+                <p id="nocscript-link">Visit <a href="https://www.enable-javascript.com/" target="_blank">Enable
+                        Javascript</a>
+                    for instructions for your web browser.</p>
+            </noscript>
 
-        <p id="one-country"></p>
+            <h2 id="section-header"></h2>
 
-        <p id="countries-number"></p>
-        <!-- <p id="countries-population"></p> -->
-        <p id="data-output-01"></p>
-        <p id="total-population"></p>
-        <p id="total-populationw"></p>
-        <p id="countries"></p>
+            <div id="data">
 
-    </main>
+                <section id="data-1">
+                    <h3 id="world-info"></h3>
+                    <hr>
+                    <p id="total-population"></p>
+                    <p id="countries-number"></p>
+
+                </section>
+
+                <section id="data-2">
+                    <h3 id="math-quiz"></h3>
+
+                </section>
 
 
+            </div>
 
+        </main>
+
+        <!-- Footer info -->
+        <div id="footer-info">
+            <div id="footer-box-1">
+
+                <h4>Impressum</h4>
+                <span id="impressum-date">impressum date</span><br>
+                <span id="impressum-name">impressum name</span>
+            </div>
+
+            <div id="footer-box-2">
+                <h4>Contact</h4>
+                <span class="email-symbol contact-email-address"></span>
+            </div>
+        </div>
+
+        <footer id="footer-content">
+            <div id="footer-1">
+                <p>
+                    <a class="footer-top" href="#top"> [ Top ]</a>
+                </p>
+            </div>
+
+            <div id="footer-2">
+                <p>
+                    <a class="footer-sitemap" href="sitemap.html"> Sitemap</a>
+                </p>
+            </div>
+
+        </footer>
+
+    </div>
 
 </body>
 
