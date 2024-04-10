@@ -89,7 +89,7 @@ main {
 main #data {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "data-1 data-2";
+  grid-template-areas: "data-1 data-2" "data-3 data-3";
 }
 
 #data-1 {
@@ -164,7 +164,7 @@ footer {
   }
   main #data {
     grid-template-columns: 1fr;
-    grid-template-areas: "data-1" "data-2";
+    grid-template-areas: "data-1" "data-2" "data-3";
   }
   #footer-info {
     grid-template-columns: 1fr;
@@ -221,6 +221,27 @@ a:active {
 
 #nocscript-link a {
   text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #dde7ef;
+}
+
+tr:nth-child(even) {
+  background-color: #eef3f7;
 }
 
 html {
