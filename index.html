@@ -73,7 +73,8 @@
             </noscript>
 
             <h2 id="section-header"></h2>
-
+            <p>Source: <a href="https://www.worldometers.info" target="_blank">www.worldometers.info</a> and <a
+                    href="https://restcountries.com" target="_blank">restcountries.com</a></p>
             <div id="data">
 
                 <section id="data-1">
@@ -87,6 +88,44 @@
                 <section id="data-2">
                     <h3 id="single-country"></h3>
                     <hr>
+                    <select id="mySelect"></select>
+                    <table>
+                        <tr>
+                            <td>Country Name:</td>
+                            <td id="single-country-name"></td>
+                        </tr>
+                        <tr>
+                            <td>Country Code:</td>
+                            <td id="single-country-code"></td>
+                        </tr>
+                        <tr>
+                            <td>Capital:</td>
+                            <td id="single-country-capital"></td>
+                        </tr>
+                        <tr>
+                            <td>Population:</td>
+                            <td id="single-country-population"></td>
+                        </tr>
+                        <tr>
+                            <td>Area:</td>
+                            <td id="single-country-area"></td>
+                        </tr>
+                        <tr>
+                            <td>Continent:</td>
+                            <td id="single-country-continent"></td>
+                        </tr>
+                        <tr>
+                            <td>Subregion:</td>
+                            <td id="single-country-subregion"></td>
+                        </tr>
+                        <tr>
+                            <td>Flag:</td>
+                            <td id="single-country-flag"></td>
+                        </tr>
+                    </table>
+
+                    <button id="showtop">Show Top 10</button>
+                    <button id="showlast">Show Last 10</button>
 
                 </section>
 
@@ -97,6 +136,15 @@
                     <div id="tableContainer"></div>
                 </section>
 
+            </div>
+
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <p id="modal-title"></p>
+                    <table id="arrayTable">
+                    </table>
+                </div>
             </div>
 
         </main>
