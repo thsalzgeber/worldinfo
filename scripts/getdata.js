@@ -29,7 +29,8 @@ function getCountryApi() {
                 'flag': value.flags.png,
                 'continents': value.continents,
                 'region': value.region,
-                'subregion': value.subregion
+                'subregion': value.subregion,
+                'maps': value.maps.googleMaps
             }
         });
 
@@ -72,7 +73,6 @@ function convertJsonArray(jsonCountries) {
         if (r.country === 'Czech Republic (Czechia)') r.country = 'Czechia';
         if (r.country === `Côte d'Ivoire`) r.country = 'Ivory Coast';
         if (r.country === `Congo`) r.country = 'Republic of the Congo';
-        if (r.country === `State of Palestine`) r.country = 'Republic of the Congo';
         if (r.country === `State of Palestine`) r.country = 'Palestine';
         if (r.country === `Macao`) r.country = 'Macau';
         if (r.country === `Cabo Verde`) r.country = 'Cape Verde';
@@ -105,6 +105,7 @@ function mergeJsonApi() {
             country1.flag = matchingItem.flag;
             country1.continents = matchingItem.continents;
             country1.subregion = matchingItem.subregion;
+            country1.maps = matchingItem.maps;
         }
     });
 
@@ -112,7 +113,7 @@ function mergeJsonApi() {
         population = +r.population;
         totalPopulation += population;
         tableArray.push({ name: r.country, code: r.countrycode, capital: r.capital, population: population.toLocaleString(locales), area: r.area.toLocaleString(locales), continents: r.continents, subregion: r.subregion });
-        tableArrayForSingle.push({ name: r.country, code: r.countrycode, area: r.area.toLocaleString(locales), capital: r.capital, population: population.toLocaleString(locales), continents: r.continents, subregion: r.subregion, flag: r.flag });
+        tableArrayForSingle.push({ name: r.country, code: r.countrycode, area: r.area.toLocaleString(locales), capital: r.capital, population: population.toLocaleString(locales), maps: r.maps, continents: r.continents, subregion: r.subregion, flag: r.flag });
     }
 
     writeData();

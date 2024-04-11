@@ -15,6 +15,7 @@ const $singleCountryPopulation = $('#single-country-population');
 const $singleCountryArea = $('#single-country-area');
 const $singleCountryContinent = $('#single-country-continent');
 const $singleCountrySubregion = $('#single-country-subregion');
+const $singleCountryMap = $('#single-country-map');
 const $singleCountryFlag = $('#single-country-flag');
 
 const $countryList = $('#country-list');
@@ -106,6 +107,7 @@ function singleCountry(selectedIndex = 35) {
     $singleCountryArea.html(`<strong>${tableArrayForSingle[selectedIndex].area} km²</strong>`);
     $singleCountryContinent.html(`<strong>${tableArrayForSingle[selectedIndex].continents}</strong>`);
     $singleCountrySubregion.html(`<strong>${tableArrayForSingle[selectedIndex].subregion}</strong>`);
+    $singleCountryMap.html(`<strong><a href="${tableArrayForSingle[selectedIndex].maps}" target="_blank">${tableArrayForSingle[selectedIndex].maps}</strong>`);
     $singleCountryFlag.html(`<img src="${tableArrayForSingle[selectedIndex].flag}" height="100">`);
 
 }
