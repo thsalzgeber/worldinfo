@@ -24,7 +24,7 @@ const selectElement = document.getElementById('mySelect');
 const showTop = document.getElementById('showtop');
 const showLast = document.getElementById('showlast');
 
-$sectionHeader.html(`Population of all countries (2024)`);
+$sectionHeader.html(`Population of all countries (July 16, 2023)`);
 $worldInfo.html(`Summary`);
 $singleCountry.html(`Select Country`);
 $countryList.html(`Country List`);
