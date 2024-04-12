@@ -129,14 +129,14 @@
                         </tr>
                     </table>
 
-                    <button id="showtop">Show Top 10</button>
-                    <button id="showlast">Show Last 10</button>
-
                 </section>
 
                 <section id="data-3">
                     <h3 id="country-list">country list</h3>
-                    <p>Sorted by population.</p>
+                    <p>Click on the table header or the arrow to sort the table by 'Country Name', 'Population', or
+                        'Area'.</p>
+                    <button id="showtop">Show Top 10</button>
+                    <button id="showlast">Show Last 10</button>
                     <hr>
                     <div id="tableContainer"></div>
                 </section>
@@ -146,6 +146,7 @@
             <div class="modal" id="modal" onclick="closeModal()">
                 <div class="modal-content" onclick="event.stopPropagation();">
                     <span class="close-button" onclick="closeModal()">&times;</span>
+                    <p id="modal-title"></p>
                     <table id="arrayTable">
                     </table>
                 </div>

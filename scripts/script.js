@@ -1,7 +1,7 @@
 
 const $sectionHeader = $('#section-header');
 
-const locales = 'en-US';
+let locales = '';
 const $worldInfo = $('#world-info');
 const $countriesNumber = $('#countries-number');
 const $totalPopulation = $('#total-population');
@@ -32,7 +32,7 @@ $countryList.html(`Country List`);
 init();
 
 function init() {
-
+    locales = window.navigator.language;
     getLocalJson();
     getCountryApi();
 
@@ -52,11 +52,17 @@ function generateTable(data) {
 
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
-    const headers = ['Country Name', 'Country Code', 'Capital City', 'Population', 'Area (km²)', 'Continents', 'Sub-Region'];
+    const headers = ['Country Name ⇓', 'Country Code', 'Capital City', 'Population ⇓', 'Area (km²) ⇓', 'Continents', 'Sub-Region'];
 
-    headers.forEach(headerText => {
+    headers.forEach((headerText, index) => {
         const header = document.createElement('th');
         header.textContent = headerText;
+        // Add click event listener to each header for sorting
+        if (headerText === 'Country Name ⇓' || headerText === 'Population ⇓' || headerText === 'Area (km²) ⇓') {
+            header.addEventListener('click', function () {
+                sortTable(index);
+            });
+        }
         headerRow.appendChild(header);
     });
 
@@ -69,7 +75,11 @@ function generateTable(data) {
 
         for (let key in item) {
             let cell = document.createElement('td');
-            cell.textContent = item[key];
+            if (key === 'population' || key === 'area') {
+                cell.textContent = formatNumber(item[key]);
+            } else {
+                cell.textContent = item[key];
+            }
             row.appendChild(cell);
         }
 
@@ -79,6 +89,28 @@ function generateTable(data) {
     table.appendChild(tbody);
 
     return table;
+}
+
+function sortTable(columnIndex) {
+    tableArray.sort((a, b) => {
+        let keyA = a[Object.keys(a)[columnIndex]];
+        let keyB = b[Object.keys(b)[columnIndex]];
+
+        if (typeof keyA === 'string' && typeof keyB === 'string') {
+            return keyA.localeCompare(keyB);
+        } else {
+            return keyB - keyA;
+        }
+    });
+
+    // Regenerate the table with sorted data
+    let tableContainer = document.getElementById('tableContainer');
+    tableContainer.innerHTML = ''; // Clear previous content
+    tableContainer.appendChild(generateTable(tableArray));
+}
+
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function writeTable() {
@@ -137,7 +169,7 @@ showTop.addEventListener('click', function () {
             population: r.population
         });
     }
-    displayEntries('Top 10', entries);
+    displayEntries('Top 10 Countries', entries);
 })
 
 showLast.addEventListener('click', function () {
@@ -149,7 +181,7 @@ showLast.addEventListener('click', function () {
             population: r.population
         });
     }
-    displayEntries('Last 10', entries);
+    displayEntries('Last 10 Countries', entries);
 })
 
 
