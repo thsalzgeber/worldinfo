@@ -1,5 +1,4 @@
 // https://restcountries.com/
-// https://www.worldometers.info/world-population/population-by-country/
 
 const jsonFileLocation = "json/population.json";
 const apiUrl = 'https://restcountries.com/v3.1/all';
@@ -36,6 +35,8 @@ function getCountryApi() {
 
         convertApiArray(apiCountries);
     });
+
+    // mergeJsonApi();
 }
 
 function getLocalJson() {
@@ -98,10 +99,12 @@ function mergeJsonApi() {
         const matchingItem = apiArray.find(country2 => country2.country === country1.country);
 
         if (matchingItem) {
+            // country1.country = matchingItem.country;
             country1.capital = matchingItem.capital;
             country1.countrycode = matchingItem.countrycode;
             country1.currencies = matchingItem.currencies;
             country1.area = matchingItem.area;
+            country1.population = matchingItem.population;
             country1.flag = matchingItem.flag;
             country1.continents = matchingItem.continents;
             country1.subregion = matchingItem.subregion;

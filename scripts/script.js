@@ -24,7 +24,7 @@ const selectElement = document.getElementById('mySelect');
 const showTop = document.getElementById('showtop');
 const showLast = document.getElementById('showlast');
 
-$sectionHeader.html(`Population of all countries (July 16, 2023)`);
+$sectionHeader.html(`Population of all countries`);
 $worldInfo.html(`Summary`);
 $singleCountry.html(`Select Country`);
 $countryList.html(`Country List`);
@@ -41,7 +41,9 @@ function init() {
 function writeData() {
     $totalPopulation.html(`Total Population: <strong>${totalPopulation.toLocaleString(locales)}</strong>`);
     $countriesNumber.html(`Numbers of Countries: <strong>${jsonArray.length}</strong>`);
+    // sortTable('Population ⇓');
     writeTable();
+
     singleCountry();
     createDropdownList();
 }
