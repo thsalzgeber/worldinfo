@@ -104,7 +104,7 @@ function mergeJsonApi() {
             country1.countrycode = matchingItem.countrycode;
             country1.currencies = matchingItem.currencies;
             country1.area = matchingItem.area;
-            country1.population = matchingItem.population;
+            // country1.population = matchingItem.population;
             country1.flag = matchingItem.flag;
             country1.continents = matchingItem.continents;
             country1.subregion = matchingItem.subregion;
@@ -114,10 +114,10 @@ function mergeJsonApi() {
 
     for (const r of jsonArray) {
         if (r.country === `Afghanistan`) r.flag = 'https://flagcdn.com/w320/af.png';
-        population = +r.population;
-        totalPopulation += population;
-        tableArray.push({ name: r.country, code: r.countrycode, capital: r.capital, population: population, area: r.area, continents: r.continents, subregion: r.subregion });
-        tableArrayForSingle.push({ name: r.country, code: r.countrycode, area: r.area.toLocaleString(locales), capital: r.capital, population: population.toLocaleString(locales), maps: r.maps, continents: r.continents, subregion: r.subregion, flag: r.flag });
+        // population = +r.population;
+        totalPopulation += r.population;
+        tableArray.push({ name: r.country, code: r.countrycode, capital: r.capital, population: r.population, area: r.area, continents: r.continents, subregion: r.subregion });
+        tableArrayForSingle.push({ name: r.country, code: r.countrycode, area: r.area.toLocaleString(locales), capital: r.capital, population: r.population.toLocaleString(locales), maps: r.maps, continents: r.continents, subregion: r.subregion, flag: r.flag });
     }
 
     writeData();
