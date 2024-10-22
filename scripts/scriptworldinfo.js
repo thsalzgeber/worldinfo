@@ -54,7 +54,7 @@ function generateTable(data) {
 
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
-    const headers = ['Country Name ⇓', 'Country Code', 'Capital City', 'Population ⇓', 'Area (km²) ⇓', 'Continents', 'Sub-Region'];
+    const headers = ['Country Name ⇓', 'Country Code', 'Capital City', 'Population ⇓', 'Area (km²) ⇓', 'Continent', 'Sub-Region'];
 
     headers.forEach((headerText, index) => {
         const header = document.createElement('th');
